@@ -5,14 +5,15 @@ var express = require("express"),
   port = process.env.PORT || 3000,
   bodyParser = require('body-parser');
 
-//const bodyParser = require('body-parser');
 var todoRoutes = require('./routes/todos')
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extend: true}));
+app.use(express.static(__dirname + '/public/'));
+app.use(express.static(__dirname + '/views'));
 
 app.get("/", function (req, res) {
-  res.send({ Hello: "root" });
+  res.sendFile("index.html");
 });
 
 app.use('/api/todos', todoRoutes);
