@@ -8,7 +8,7 @@ var express = require("express"),
 var todoRoutes = require('./routes/todos')
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extend: true}));
+app.use(express.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/public/'));
 app.use(express.static(__dirname + '/views'));
 
@@ -19,5 +19,5 @@ app.get("/", function (req, res) {
 app.use('/api/todos', todoRoutes);
 
 app.listen(port, function () {
-  console.log("App is running on port " + port);
+  console.log(`App is running on http://localhost:${port}`);
 });
