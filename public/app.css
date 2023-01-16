@@ -1,15 +1,22 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,700');
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,700");
 
+.container-fluid {
+  padding-top: 20px;
+}
+
+.justify-content-center {
+  min-width: fit-content;
+}
 h1 {
   color: blueviolet;
 }
 
-header{
+header {
   text-align: center;
 }
 
-body{
-  font-family: 'Roboto Mono', sans-serif;
+body {
+  font-family: "Roboto Mono", sans-serif;
   background: #e2e5e5;
 }
 
@@ -29,15 +36,15 @@ span {
   font-size: 20px;
   padding: 0 20px;
   color: #34495e;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
 .task:hover {
-  background: rgba(0, 0, 0, .02);
+  background: rgba(0, 0, 0, 0.02);
   cursor: pointer;
 }
 
-.task:hover span{
+.task:hover span {
   opacity: 1;
 }
 

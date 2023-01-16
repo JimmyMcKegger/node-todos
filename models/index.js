@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+mongoose.set('strictQuery', true);
 mongoose.set('debug', true);
 mongoose.connect(`mongodb+srv://james:${process.env.MPASS}@cluster0.iss9lr6.mongodb.net/?retryWrites=true&w=majority`)
 
