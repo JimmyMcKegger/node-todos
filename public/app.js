@@ -17,7 +17,7 @@ $(document).ready(function () {
     removeTodo($(this).parent());
   });
 
-  
+
 });
 
 function addTodos(todos) {
@@ -64,7 +64,7 @@ function updateTodo(todo){
     todo.data('completed', newState);
   })
 
-  
+
 
 }
 
@@ -83,3 +83,21 @@ function removeTodo(todo) {
       console.log(err);
     });
 }
+
+// Check for dark mode preference is saved in local storage
+const isDarkMode = localStorage.getItem("darkMode") === "true";
+
+// Apply dark mode if the preference is set
+if (isDarkMode) {
+  document.body.classList.add("dark-mode");
+}
+
+// Toggle dark mode
+document.getElementById("darkModeToggle").addEventListener("click", () => {
+  // Toggle the class on the body element
+  document.body.classList.toggle("dark-mode");
+
+  // Save the user's preference to local storage
+  const isDarkModeNow = document.body.classList.contains("dark-mode");
+  localStorage.setItem("darkMode", isDarkModeNow);
+});

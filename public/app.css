@@ -7,6 +7,7 @@
 .justify-content-center {
   min-width: fit-content;
 }
+
 h1 {
   color: blueviolet;
 }
@@ -17,7 +18,8 @@ header {
 
 body {
   font-family: "Roboto Mono", sans-serif;
-  background: #e2e5e5;
+  background: #f2f2f2; /* Light mode background */
+  color: #34495e; /* Dark gray text color */
 }
 
 span {
@@ -35,12 +37,12 @@ span {
   line-height: 60px;
   font-size: 20px;
   padding: 0 20px;
-  color: #34495e;
   transition: all 0.3s ease;
+  color: #34495e;
 }
 
 .task:hover {
-  background: rgba(0, 0, 0, 0.02);
+  background: rgba(0, 0, 0, 0.02); /* Light gray hover background */
   cursor: pointer;
 }
 
@@ -50,12 +52,52 @@ span {
 
 .done {
   text-decoration: line-through;
-  color: #bdc3c7;
+  color: #bdc3c7; /* Light gray for completed tasks */
 }
 
 li span {
   float: right;
-  color: #c0392b;
+  color: #40a7ab;
   transition: all 0.3s;
   opacity: 0;
+}
+
+#darkModeToggle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 10px;
+  background: #3498db; /* Blue button color */
+  color: #fff; /* White text color */
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#darkModeToggle:hover {
+  background: #2980b9; /* Darker blue on hover */
+}
+
+/* Dark Mode */
+.dark-mode {
+  background-color: #333; /* Dark mode background */
+  color: #fff; /* White text color */
+}
+
+/* Adjust task color for dark mode */
+.dark-mode .task {
+  color: #40a7ab;
+}
+
+.dark-mode .task:hover {
+  background: rgba(255, 255, 255, 0.1); /* Adjust hover background for dark mode */
+}
+
+.dark-mode .done {
+  color: #bdc3c7; /* Light gray for completed tasks */
+}
+
+.dark-mode li span {
+  color: #e74c3c; /* Red color for delete button */
 }
